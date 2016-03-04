@@ -73,14 +73,16 @@ Triangle<T>::Triangle(const T side1, const T side2, const T side3) {
 }
 
 template<class T>
-void Triangle<T>::setSides(T newSide1, T newSide2, T newSide3){
-    if(abs(newSide1)>0 && abs(newSide2)>0 && abs(newSide3)>0 ) { //cannot have vector triangle if a magnitude == 0
-        sideOne = newSide1;
-        sideTwo = newSide2;
-        sideThree = newSide3;
+void Triangle<T>::setSides(T newSide1, T newSide2, T newSide3) {
+    if (abs(newSide1) > 0 && abs(newSide2) > 0 && abs(newSide3) > 0) { //cannot have vector triangle if a magnitude == 0
+        if ((sideOne + sideTwo > sideThree) && (sideOne + sideThree > sideTwo) && (sideTwo + sideThree > sideOne)) {
+            sideOne = newSide1;
+            sideTwo = newSide2;
+            sideThree = newSide3;
+        }
     }
     else{
-    cout<<"Please check your values, all lengths of your triangle sides must all be more than 0\n";
+        Triangle();
     }
 
 }
@@ -93,7 +95,7 @@ std::vector<T> Triangle<T> ::getSides() const {
 template<class T>
 T Triangle<T>::getArea() const {
     T x= (sideOne+sideTwo+sideThree)/2;
-    T area = sqrt(x*(abs(x-sideOne))*(abs(x-sideTwo))*(abs(x-sideThree)));
+    T area = sqrt(x*(x-sideOne)*(x-sideTwo)*(x-sideThree));
     return area;
 }
 
