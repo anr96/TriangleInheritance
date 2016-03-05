@@ -1,7 +1,7 @@
 #HW3 Amanda Robinson
-TODO - Update your name in this readme.
 
-TODO - Add a badge from travis CI here
+Travis CI Badge (markdown)
+[![Build Status](https://travis-ci.com/csc340-03-spring-2016/csc340-03-hw3-anr96.svg?token=sqKHHUsKkyZTggTth4Mt&branch=master)](https://travis-ci.com/csc340-03-spring-2016/csc340-03-hw3-anr96)
 
 ##Problem statement:
 
